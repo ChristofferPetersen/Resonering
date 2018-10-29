@@ -27,7 +27,7 @@ namespace Quiz
 
         }
 
-        public void L�seOgReturnereListMedSp�rgsm�lOgSvar()
+        public void LaeseOgReturnereListMedSpoergsmaalOgSvar()
         {
 
         }
