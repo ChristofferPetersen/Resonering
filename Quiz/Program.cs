@@ -34,8 +34,8 @@ namespace Quiz
 
         public void BrugerInput()
         {
-            //Tager imod bruger input.
-            string brugerInput = Console.ReadLine();
+            //Tager imod bruger input, dette er et trimmet input.
+            string brugerInput = UdvidetTrim(Console.ReadLine());
             
             //If s�tning der tjekker om svaret er sandt eller falsk.
             if (brugerInput == "Yes")
@@ -61,6 +61,25 @@ namespace Quiz
         public void OpretteHenteOgGemmeHighscores()
         {
             File.ReadAllLines("highscore.txt");
+        }
+
+        public string UdvidetTrim(string brugerInput)
+        { //Funktion der fjerner overflødige mellemrum fra input.
+            //Variabler der styre hvilket stadie input er i.
+            string trimmetInput = input.Trim();
+            string gammeltInput;
+
+            //Laver alle dobbelt mellemrum om til almindeligt mellemrum.
+            do
+            {
+                gammeltInput = trimmetInput;
+                trimmetInput = trimmetInput.Replace("  ", " ");
+            }
+
+            while (trimmetInput != gammeltInput);
+
+            //Returnere det nye inputs string.
+            return trimmetInput;
         }
     }
 }
