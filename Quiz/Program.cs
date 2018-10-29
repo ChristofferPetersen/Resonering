@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Quiz
 {
@@ -30,7 +31,7 @@ namespace Quiz
 
         public void OpretteHenteOgGemmeHighscores()
         {
-
+            File.ReadAllLines("highscore.txt");
         }
     }
 }
