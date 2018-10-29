@@ -8,6 +8,15 @@ namespace Quiz
 {
     class Methods
     {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                
+            }
+        }
+
+
         public void FilMedSvar()
         {
 
@@ -20,7 +29,7 @@ namespace Quiz
 
         public void BrugerInput()
         {
-
+            string
         }
 
         public void CheckerAntalRigtige()
