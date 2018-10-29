@@ -6,12 +6,31 @@ using System.Threading.Tasks;
 
 namespace Quiz
 {
-    class Program
+    class Methods
     {
-        static void Main(string[] args)
+        public void FilMedSvar()
         {
-            Console.WriteLine("Dette er FUCKED");
-             Console.WriteLine("Nej det er ej");
+
+        }
+
+        public void LæseOgReturnereListMedSpørgsmålOgSvar()
+        {
+
+        }
+
+        public void BrugerInput()
+        {
+
+        }
+
+        public void CheckerAntalRigtige()
+        {
+
+        }
+
+        public void OpretteHenteOgGemmeHighscores()
+        {
+
         }
     }
 }
