@@ -37,7 +37,7 @@ namespace Quiz
             //Tager imod bruger input, dette er et trimmet input.
             string brugerInput = UdvidetTrim(Console.ReadLine());
             
-            //If s�tning der tjekker om svaret er sandt eller falsk.
+            //If saetning der tjekker om svaret er sandt eller falsk.
             if (brugerInput == "Yes")
             {   //Besked ved svar 'Yes'.
                 Console.WriteLine("You answered Yes.");
@@ -64,7 +64,7 @@ namespace Quiz
         }
 
         public string UdvidetTrim(string brugerInput)
-        { //Funktion der fjerner overflødige mellemrum fra input.
+        { //Funktion der fjerner overfloedige mellemrum fra input.
             //Variabler der styre hvilket stadie input er i.
             string trimmetInput = input.Trim();
             string gammeltInput;
