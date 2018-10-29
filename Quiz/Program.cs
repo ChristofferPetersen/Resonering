@@ -10,9 +10,11 @@ namespace Quiz
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("test test 2 Elena");
-            Console.WriteLine("Dette er FUCKED");
-             Console.WriteLine("Nej det er ej");
+            // initialize score for a new game
+            UserScore newScore = new UserScore();
+
+            // call calculate score method
+            newScore = newScore.CalculateScore(newScore, "test question", "ja", "ja");
         }
     }
 }
