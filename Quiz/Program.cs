@@ -7,16 +7,16 @@ using System.IO;
 
 namespace Quiz
 {
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
+
     class Methods
     {
-        class Program
-        {
-            static void Main(string[] args)
-            {
-                
-            }
-        }
-
 
         public void FilMedSvar()
         {
