@@ -48,7 +48,7 @@ namespace Quiz
             }
             else
             {   //Besked ved forkert input.
-                Console.WriteLine("Skriv svaret som enten 'Yes' / 'No'.");
+                Console.WriteLine("Write the answer as: 'Yes' / 'No'.");
             }
             
         }
