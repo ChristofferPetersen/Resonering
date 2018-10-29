@@ -35,15 +35,15 @@ namespace Quiz
             
             //If sætning der tjekker om svaret er sandt eller falsk.
             if (brugerInput == "Yes")
-            {
+            {   //Besked ved svar 'Yes'.
                 Console.WriteLine("You answered Yes.");
             }
             else if (brugerInput == "No")
-            {
+            {   //Besked ved svar 'No'.
                 Console.WriteLine("You answered No.");
             }
             else
-            {
+            {   //Besked ved forkert input.
                 Console.WriteLine("Skriv svaret som enten 'Yes' / 'No'.");
             }
             
