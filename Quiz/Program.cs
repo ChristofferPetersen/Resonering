@@ -7,9 +7,9 @@ using System.IO;
 
 namespace Quiz
 {
-    class Methods
+    class Program
     {
-        class Program
+        static void Main(string[] args)
         {
             // initialize score for a new game
             UserScore newScore = new UserScore();
@@ -17,7 +17,10 @@ namespace Quiz
             // call calculate score method
             newScore = newScore.CalculateScore(newScore, "test question", "ja", "ja");
         }
+    }
 
+    class Methods
+    {
 
         public void FilMedSvar()
         {
