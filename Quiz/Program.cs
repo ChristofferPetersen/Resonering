@@ -29,7 +29,7 @@ namespace Quiz
 
         public void FileReadingAndListReturn()
         {
-            string path; //Stien til spørgsmål og svar filen
+            string path; //Stien til spï¿½rgsmï¿½l og svar filen
         }
 
         public void BrugerInput()
