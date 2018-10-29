@@ -27,9 +27,9 @@ namespace Quiz
 
         }
 
-        public void Lï¿½seOgReturnereListMedSpï¿½rgsmï¿½lOgSvar()
+        public void FileReadingAndListReturn()
         {
-
+            string path; //Stien til spørgsmål og svar filen
         }
 
         public void BrugerInput()
