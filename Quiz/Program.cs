@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +11,7 @@ namespace Quiz
         static void Main(string[] args)
         {
             Console.WriteLine("Dette er FUCKED");
+             Console.WriteLine("Nej det er ej");
         }
     }
 }
