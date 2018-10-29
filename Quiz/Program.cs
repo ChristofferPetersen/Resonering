@@ -10,7 +10,7 @@ namespace Quiz
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Dette er en test");
+            Console.WriteLine("Dette er FUCKED");
         }
     }
 }
