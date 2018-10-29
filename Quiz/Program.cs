@@ -22,7 +22,7 @@ namespace Quiz
     class Methods
     {
 
-        public void FilMedSvar()
+        public void test()
         {
 
         }
