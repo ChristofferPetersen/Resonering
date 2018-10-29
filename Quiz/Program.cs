@@ -30,7 +30,23 @@ namespace Quiz
 
         public void BrugerInput()
         {
-            string
+            //Tager imod bruger input.
+            string brugerInput = Console.ReadLine();
+            
+            //If sætning der tjekker om svaret er sandt eller falsk.
+            if (brugerInput == "Yes")
+            {
+                Console.WriteLine("You answered Yes.");
+            }
+            else if (brugerInput == "No")
+            {
+                Console.WriteLine("You answered No.");
+            }
+            else
+            {
+                Console.WriteLine("Skriv svaret som enten 'Yes' / 'No'.");
+            }
+            
         }
 
         public void CheckerAntalRigtige()
