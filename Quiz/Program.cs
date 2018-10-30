@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.IO;
 
 namespace Quiz
@@ -41,7 +41,6 @@ namespace Quiz
 
         public DataGroup FileReadingAndListReturn(DataGroup dataGroup)
         {
-            //Fix for spaden der �del�gger
             string[] fileArray = File.ReadAllLines("../../questions.txt");
             for (int i = 0; i < fileArray.Length; i+=1)
             {
@@ -55,34 +54,53 @@ namespace Quiz
             //Loop der køre gennem alle spørgsmål.
             for (int i = 0; i < dataGroup.questions.Count; i++)
             {
-                Console.WriteLine(dataGroup.questions[i]);
+                //Dette er for at slette tidligere spørgsmål og svar
+                Thread.Sleep(1000);
+                Console.Clear();
 
-                //Tager imod bruger input, dette er et trimmet input.
-                string brugerInput = UdvidetTrim(Console.ReadLine());
+                //Splitter spørgmål fra svar.
+                string[] questions = dataGroup.questions[i].Split(',');
 
-                //If saetning der tjekker om svaret er sandt eller falsk.
-                if (brugerInput.ToLower() == "yes")
+                //Holder quizzen kørende.
+                bool quizRunning = true;
+
+                while (quizRunning)
                 {
-                    //Besked ved svar 'Yes'.
-                    Console.WriteLine("You answered Yes.");
+                    //Stiller et spørgsmål.
+                    Console.WriteLine(questions[0]);
+                    
+                    //Tager imod bruger input, dette er et trimmet input.
+                    string brugerInput = UdvidetTrim(Console.ReadLine());
 
-                    //Add Yes to the List called quesses which is located inside Datagroup class.
-                    dataGroup.guesses.Add("Yes");
-                }
-                else if (brugerInput.ToLower() == "no")
-                {
-                    //Besked ved svar 'No'.
-                    Console.WriteLine("You answered No.");
+                    //If saetning der tjekker om svaret er sandt eller falsk.
+                    if (brugerInput.ToLower() == "yes")
+                    {
+                        //Besked ved svar 'Yes'.
+                        Console.WriteLine("You answered Yes.");
 
-                    //Add No to the List called quesses which is located inside Datagroup class.
-                    dataGroup.guesses.Add("No");
+                        //Add Yes to the List called quesses which is located inside Datagroup class.
+                        dataGroup.guesses.Add("Yes");
+                        quizRunning = false;
+                    }
+                    else if (brugerInput.ToLower() == "no")
+                    {
+                        //Besked ved svar 'No'.
+                        Console.WriteLine("You answered No.");
+
+                        //Add No to the List called quesses which is located inside Datagroup class.
+                        dataGroup.guesses.Add("No");
+                        quizRunning = false;
+                    }
+                    else
+                    {
+                        //Besked ved forkert input.
+                        Console.WriteLine("Write the answer as: 'Yes' / 'No'.");
+                        //Dette er for at slette tidligere spørgsmål og svar
+                        Thread.Sleep(1000);
+                        Console.Clear();
+                    }
                 }
-                else
-                {
-                    //Besked ved forkert input.
-                    Console.WriteLine("Write the answer as: 'Yes' / 'No'.");
-                }
-            }            
+            }
             return dataGroup;
             
         }
