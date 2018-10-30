@@ -24,7 +24,6 @@ namespace Quiz
 
     class Methods
     {
-
         public void test()
         {
 
@@ -32,7 +31,7 @@ namespace Quiz
 
         public DataGroup FileReadingAndListReturn(DataGroup dataGroup)
         {
-            //Fix for spaden der ødelægger
+            //Fix for spaden der ï¿½delï¿½gger
             string[] fileArray = File.ReadAllLines("questions.txt");
             for (int i = 0; i < fileArray.Length; i+=1)
             {
@@ -41,23 +40,44 @@ namespace Quiz
             return dataGroup;
         }
 
-        public void BrugerInput()
+        public bool BrugerInput()
         {
             //Tager imod bruger input, dette er et trimmet input.
             string brugerInput = UdvidetTrim(Console.ReadLine());
-            
+
+            //Lav nyt objekt kaldet datagroup, for at fÃ¥ adgang til listen quesses
+            DataGroup dataGroup = new DataGroup();
+
             //If saetning der tjekker om svaret er sandt eller falsk.
             if (brugerInput == "Yes")
-            {   //Besked ved svar 'Yes'.
+            {   
+                //Besked ved svar 'Yes'.
                 Console.WriteLine("You answered Yes.");
+
+                //Add Yes to the List called quesses which is located inside Datagroup class.
+                dataGroup.guesses.Add("Yes");
+
+                //Returnere en true status pÃ¥ svaret, indikere at svaret er 'Yes'.
+                return true;
             }
             else if (brugerInput == "No")
-            {   //Besked ved svar 'No'.
+            {   
+                //Besked ved svar 'No'.
                 Console.WriteLine("You answered No.");
+
+                //Add No to the List called quesses which is located inside Datagroup class.
+                dataGroup.guesses.Add("No");
+
+                //Returnere en false status pÃ¥ svaret, indikere at svaret er 'No'.
+                return false;
             }
             else
-            {   //Besked ved forkert input.
+            {   
+                //Besked ved forkert input.
                 Console.WriteLine("Write the answer as: 'Yes' / 'No'.");
+
+                //Den returnere en false ellers brokker metoden sig over at den ikke returnere noget data.
+                return false;
             }
             
         }
