@@ -19,13 +19,11 @@ namespace Quiz
             
             // call calculate score method
             datagroup = game.FileReadingAndListReturn(datagroup);
-
-            DataGroup test = new DataGroup();
-            test.questions = new List<string> { "test", "hej"};
+            
 
             //Kalder brugerInput.
             Methods brugerInput = new Methods();
-            var input = brugerInput.BrugerInput(test);
+            var input = brugerInput.BrugerInput(datagroup);
 
             //newScore = newScore.CalculateScore(newScore, datagroup);
       
