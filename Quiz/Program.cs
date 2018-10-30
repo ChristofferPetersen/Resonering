@@ -16,9 +16,9 @@ namespace Quiz
             UserScore newScore = new UserScore();
 
             // call calculate score method
-            newScore = newScore.CalculateScore(newScore, "test question", "ja", "ja");
+            newScore = newScore.CalculateScore(newScore, datagroup);
             Methods game = new Methods();
-            datagroup=game.DisplayHighscores(datagroup);
+            datagroup = game.DisplayHighscores(datagroup);
         }
     }
 
@@ -100,5 +100,5 @@ namespace Quiz
 public class DataGroup
 {
     public List<string> questions = new List<string>();
-    public List<string> quesses = new List<string>();
+    public List<string> guesses = new List<string>();
 }

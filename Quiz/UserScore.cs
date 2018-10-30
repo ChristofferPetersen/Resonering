@@ -15,10 +15,19 @@ namespace Quiz
         public List<string> WrongAnswers = new List<string>();
 
         // method to calculate and update score after each question
-        public UserScore CalculateScore(UserScore score, string question, string rightAnswer, string userAnswer)
+        public UserScore CalculateScore(UserScore score, DataGroup data)
         {
-            if (rightAnswer == userAnswer) score.CorrectAnswers++;
-            else score.WrongAnswers.Add(question);
+            int i = 0;
+            foreach(var question in data.questions)
+            {
+                var splitData = question.Split(',');
+                // question = splitData[0]
+                // correct answer = splitData[1]
+                // user answer = data.guesses[i]
+                if (splitData[1] == data.guesses[i]) score.CorrectAnswers++;
+                else score.WrongAnswers.Add(question);
+                i++;
+            }
             return score;
         }
     }
