@@ -25,10 +25,10 @@ namespace Quiz
             Methods brugerInput = new Methods();
             var input = brugerInput.BrugerInput(datagroup);
 
-            //newScore = newScore.CalculateScore(newScore, datagroup);
+            newScore = newScore.CalculateScore(newScore, datagroup);
       
                      
-            datagroup = highScore.HighScoreModule(datagroup);
+            highScore.HighScoreModule(datagroup,newScore);
         }
     }
 
@@ -145,6 +145,5 @@ public class DataGroup
 {
     public List<string> questions = new List<string>();
     public List<string> guesses = new List<string>();
-    public int newScore = 0;
 
 }
