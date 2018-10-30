@@ -11,13 +11,14 @@ namespace Quiz
     {
         static void Main(string[] args)
         {
+            DataGroup datagroup = new DataGroup();
             // initialize score for a new game
             UserScore newScore = new UserScore();
 
             // call calculate score method
             newScore = newScore.CalculateScore(newScore, "test question", "ja", "ja");
             Methods game = new Methods();
-            game.DisplayHighscores();
+            datagroup=game.DisplayHighscores(datagroup);
         }
     }
 
@@ -60,16 +61,20 @@ namespace Quiz
 
         }
 
-        public void DisplayHighscores()
+        public DataGroup DisplayHighscores(DataGroup datagroup)
         {
+            //datagroup.questions[0] = "kage,j";
+            //datagroup.quesses[0] = "j";
             //File.ReadAllLines("highscore.txt");
             Console.WriteLine("hej");
+
+            return datagroup;
         }
 
         public string UdvidetTrim(string brugerInput)
         { //Funktion der fjerner overfloedige mellemrum fra input.
             //Variabler der styre hvilket stadie input er i.
-            string trimmetInput = input.Trim();
+            string trimmetInput = brugerInput.Trim();
             string gammeltInput;
 
             //Laver alle dobbelt mellemrum om til almindeligt mellemrum.
@@ -85,4 +90,10 @@ namespace Quiz
             return trimmetInput;
         }
     }
+}
+
+public class DataGroup
+{
+    public List<string> questions = new List<string>();
+    public List<string> quesses = new List<string>();
 }
