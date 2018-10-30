@@ -14,11 +14,12 @@ namespace Quiz
             DataGroup datagroup = new DataGroup();
             // initialize score for a new game
             UserScore newScore = new UserScore();
+            HighScore highScore = new HighScore();
 
             // call calculate score method
             newScore = newScore.CalculateScore(newScore, datagroup);
-            Methods game = new Methods();
-            datagroup = game.DisplayHighscores(datagroup);
+      
+            datagroup = highScore.HighScoreModule(datagroup);
         }
     }
 
@@ -86,7 +87,7 @@ namespace Quiz
         {
 
         }
-
+        /*
         public DataGroup DisplayHighscores(DataGroup datagroup)
         {
             //datagroup.questions[0] = "kage,j";
@@ -96,7 +97,7 @@ namespace Quiz
 
             return datagroup;
         }
-
+        */
         public string UdvidetTrim(string brugerInput)
         { //Funktion der fjerner overfloedige mellemrum fra input.
             //Variabler der styre hvilket stadie input er i.
@@ -122,4 +123,6 @@ public class DataGroup
 {
     public List<string> questions = new List<string>();
     public List<string> guesses = new List<string>();
+    public int newScore=0;
+
 }
