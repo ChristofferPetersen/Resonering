@@ -334,3 +334,9 @@ ASALocalRun/
 .localhistory/
 \.vs/Quiz/v15/
 Quiz/obj/Debug/Quiz\.csprojAssemblyReference\.cache
+
+Quiz/bin/Debug/Quiz\.exe
+
+Quiz/obj/Debug/Quiz\.csproj\.CoreCompileInputs\.cache
+
+Quiz/obj/Debug/Quiz\.exe
