@@ -32,6 +32,7 @@ namespace Quiz
 
         public DataGroup FileReadingAndListReturn(DataGroup dataGroup)
         {
+            //Fix for spaden der ødelægger
             string[] fileArray = File.ReadAllLines("questions.txt");
             for (int i = 0; i < fileArray.Length; i+=1)
             {
