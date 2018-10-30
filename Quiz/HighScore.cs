@@ -13,30 +13,41 @@ namespace Quiz
     public class HighScore
     {
         
-        public DataGroup HighScoreModule(DataGroup datagroup)
+        public void HighScoreModule(DataGroup datagroup, UserScore score)
         {
-            //Console.WriteLine(datagroup.newScore);
             List<string> highscorelist = new List<string>();
             highscorelist=readFile(datagroup);
+            highscorelist =checkScore(highscorelist, score.CorrectAnswers);
+            writeFile(highscorelist);
+            if (score.WrongAnswers.Count() > 0)
+                ShowWrongAnswers(score);
+        }
 
-            datagroup.newScore = 5;
-
-            highscorelist =checkScore(highscorelist, datagroup.newScore);
-            return datagroup;
+        public void ShowWrongAnswers(UserScore score)
+        {
+            foreach (string value in score.WrongAnswers)
+            {
+                Console.WriteLine(value+"\n");
+            }
         }
 
         public List<string> readFile(DataGroup dataGroup)
         {
             List<string> highscorelist = new List<string>();
             string file = "../../highscore.txt";
+            int i = 1;
             if (File.Exists(file))
             {
                 string fileContent = File.ReadAllText(file).Replace("\r", "");
                 string[] lines = fileContent.Split('\n');
                 foreach (string value in lines)
                 {
-                    Console.WriteLine(value.Split(',')[0] + " - " + value.Split(',')[1]);
-                    highscorelist.Add(value);
+                    if (value != "")
+                    {
+                        Console.WriteLine(i + " - " + value.Split(',')[0] + " - " + value.Split(',')[1]);
+                        highscorelist.Add(value);
+                        i++;
+                    }
                 }
             }
             else
@@ -45,22 +56,31 @@ namespace Quiz
             return highscorelist;
         }
 
+        public void writeFile(List<string> highscorelist)
+        {
+            File.WriteAllLines("../../highscore.txt", highscorelist);
+        }
+
         public List<string> checkScore(List<string> highscorelist,int score)
         {
             List<string> NyHighScoreList = new List<string>();
             foreach (string linje in highscorelist)
             {
-                //if(linje.Split[1]<score)
+                if (Int32.Parse(linje.Split(',')[1]) > score)
+                {
+                    NyHighScoreList.Add(linje);
+                }
+                else
+                {
+                    Console.WriteLine("Skriv dit navn");
+                    string navn = Console.ReadLine();
+                    NyHighScoreList.Add(navn+","+score);
+                    NyHighScoreList.Add(linje);
+                    score = -1;
+                }
             }
-            return highscorelist;
+            return NyHighScoreList;
         }
-            /*
-            public void writeFile(DataGroup dataGroup)
-            {
-                string[] listeArr = dataGroup.list.Split(",");
-                //foreach (string value in listeArr) File.AppendAllText(dataGroup.path+dataGroup.filename,value+"\n");
-                File.WriteAllLines(dataGroup.path + dataGroup.filename, listeArr);
-            }
-            */
+
         }
 }
