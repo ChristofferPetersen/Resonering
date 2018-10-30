@@ -11,10 +11,14 @@ namespace Quiz
     {
         static void Main(string[] args)
         {
+            Methods game = new Methods();
             DataGroup datagroup = new DataGroup();
             // initialize score for a new game
             UserScore newScore = new UserScore();
             HighScore highScore = new HighScore();
+            
+            // call calculate score method
+            datagroup = game.FileReadingAndListReturn(datagroup);
 
             DataGroup test = new DataGroup();
             test.questions = new List<string> { "test", "hej"};
@@ -23,10 +27,9 @@ namespace Quiz
             Methods brugerInput = new Methods();
             var input = brugerInput.BrugerInput(test);
 
-            // call calculate score method
-            newScore = newScore.CalculateScore(newScore, input);
+            //newScore = newScore.CalculateScore(newScore, datagroup);
+      
                      
-
             datagroup = highScore.HighScoreModule(datagroup);
         }
     }
@@ -41,10 +44,10 @@ namespace Quiz
         public DataGroup FileReadingAndListReturn(DataGroup dataGroup)
         {
             //Fix for spaden der �del�gger
-            string[] fileArray = File.ReadAllLines("questions.txt");
+            string[] fileArray = File.ReadAllLines("../../questions.txt");
             for (int i = 0; i < fileArray.Length; i+=1)
             {
-                dataGroup.questions[i] = fileArray[i];
+                dataGroup.questions.Add(fileArray[i]);
             }
             return dataGroup;
         }
