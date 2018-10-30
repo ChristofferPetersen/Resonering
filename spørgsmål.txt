@@ -1,0 +1,12 @@
+er en hund en kat?, false 
+er en kat en hund?, false
+er gruppe 1 de bedste?, true
+er github lort?, true
+er Ian gammel?, true 
+er himlen gul, false
+er himlen grøn, false 
+er himlen blå, true
+er c# objektivt, true 
+er 1km det samme som 100m, false
+er 1km det samme som 1000m, true
+er apple godt?, false
