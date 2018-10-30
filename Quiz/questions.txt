@@ -10,7 +10,7 @@ er c# objektivt, Yes
 er 1km det samme som 100m, No
 er 1km det samme som 1000m, Yes
 er apple godt?, No
-er en ipad et skærebræt,Yese 
+er en ipad et skærebræt,Yes
 er sne hvidt?, Yes
 er sne grønt?, No
 er dette emne nemt?, Yes
