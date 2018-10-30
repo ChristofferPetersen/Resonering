@@ -11,11 +11,14 @@ namespace Quiz
     {
         static void Main(string[] args)
         {
+            DataGroup datagroup = new DataGroup();
             // initialize score for a new game
             UserScore newScore = new UserScore();
 
             // call calculate score method
             newScore = newScore.CalculateScore(newScore, "test question", "ja", "ja");
+            Methods game = new Methods();
+            datagroup=game.DisplayHighscores(datagroup);
         }
     }
 
@@ -27,9 +30,14 @@ namespace Quiz
 
         }
 
-        public void FileReadingAndListReturn()
+        public DataGroup FileReadingAndListReturn(DataGroup dataGroup)
         {
-            string path; //Stien til sp�rgsm�l og svar filen
+            string[] fileArray = File.ReadAllLines("questions.txt");
+            for (int i = 0; i < fileArray.Length; i+=1)
+            {
+                dataGroup.questions[i] = fileArray[i];
+            }
+            return dataGroup;
         }
 
         public void BrugerInput()
@@ -37,7 +45,7 @@ namespace Quiz
             //Tager imod bruger input, dette er et trimmet input.
             string brugerInput = UdvidetTrim(Console.ReadLine());
             
-            //If s�tning der tjekker om svaret er sandt eller falsk.
+            //If saetning der tjekker om svaret er sandt eller falsk.
             if (brugerInput == "Yes")
             {   //Besked ved svar 'Yes'.
                 Console.WriteLine("You answered Yes.");
@@ -58,15 +66,20 @@ namespace Quiz
 
         }
 
-        public void OpretteHenteOgGemmeHighscores()
+        public DataGroup DisplayHighscores(DataGroup datagroup)
         {
-            File.ReadAllLines("highscore.txt");
+            //datagroup.questions[0] = "kage,j";
+            //datagroup.quesses[0] = "j";
+            //File.ReadAllLines("highscore.txt");
+            Console.WriteLine("hej");
+
+            return datagroup;
         }
 
         public string UdvidetTrim(string brugerInput)
-        { //Funktion der fjerner overflødige mellemrum fra input.
+        { //Funktion der fjerner overfloedige mellemrum fra input.
             //Variabler der styre hvilket stadie input er i.
-            string trimmetInput = input.Trim();
+            string trimmetInput = brugerInput.Trim();
             string gammeltInput;
 
             //Laver alle dobbelt mellemrum om til almindeligt mellemrum.
@@ -82,4 +95,10 @@ namespace Quiz
             return trimmetInput;
         }
     }
+}
+
+public class DataGroup
+{
+    public List<string> questions = new List<string>();
+    public List<string> quesses = new List<string>();
 }
