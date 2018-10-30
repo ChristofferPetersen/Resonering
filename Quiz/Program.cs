@@ -127,6 +127,6 @@ public class DataGroup
 {
     public List<string> questions = new List<string>();
     public List<string> guesses = new List<string>();
-    public int newScore=0;
+    public int newScore = 0;
 
 }
