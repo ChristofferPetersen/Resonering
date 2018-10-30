@@ -16,6 +16,8 @@ namespace Quiz
 
             // call calculate score method
             newScore = newScore.CalculateScore(newScore, "test question", "ja", "ja");
+            Methods game = new Methods();
+            game.DisplayHighscores();
         }
     }
 
@@ -58,9 +60,10 @@ namespace Quiz
 
         }
 
-        public void OpretteHenteOgGemmeHighscores()
+        public void DisplayHighscores()
         {
-            File.ReadAllLines("highscore.txt");
+            //File.ReadAllLines("highscore.txt");
+            Console.WriteLine("hej");
         }
 
         public string UdvidetTrim(string brugerInput)
