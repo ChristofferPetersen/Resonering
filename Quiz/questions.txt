@@ -14,3 +14,4 @@ er en ipad et skærebræt, true
 er sne hvidt? true
 er sne grønt? false
 er dette emne nemt? true
+er det godt at blive gift på MCD?, true
