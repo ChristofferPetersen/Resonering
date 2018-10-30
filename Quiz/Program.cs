@@ -15,7 +15,6 @@ namespace Quiz
             // initialize score for a new game
             UserScore newScore = new UserScore();
             HighScore highScore = new HighScore();
-
             // call calculate score method
             newScore = newScore.CalculateScore(newScore, datagroup);
       
@@ -36,7 +35,7 @@ namespace Quiz
             string[] fileArray = File.ReadAllLines("questions.txt");
             for (int i = 0; i < fileArray.Length; i+=1)
             {
-                dataGroup.questions[i] = fileArray[i];
+                dataGroup.questions.Add(fileArray[i]);
             }
             return dataGroup;
         }
