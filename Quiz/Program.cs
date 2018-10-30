@@ -13,7 +13,6 @@ namespace Quiz
         {
             Methods game = new Methods();
             DataGroup datagroup = new DataGroup();
-            // initialize score for a new game
             UserScore newScore = new UserScore();
             HighScore highScore = new HighScore();
             
@@ -26,8 +25,7 @@ namespace Quiz
             var input = brugerInput.BrugerInput(datagroup);
 
             newScore = newScore.CalculateScore(newScore, datagroup);
-      
-                     
+            
             highScore.HighScoreModule(datagroup,newScore);
         }
     }

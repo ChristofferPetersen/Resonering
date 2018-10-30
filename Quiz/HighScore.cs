@@ -16,22 +16,25 @@ namespace Quiz
         public void HighScoreModule(DataGroup datagroup, UserScore score)
         {
             List<string> highscorelist = new List<string>();
-            highscorelist=readFile(datagroup);
+            highscorelist=readFile(datagroup,false);
             highscorelist =checkScore(highscorelist, score.CorrectAnswers);
             writeFile(highscorelist);
             if (score.WrongAnswers.Count() > 0)
                 ShowWrongAnswers(score);
+            highscorelist = readFile(datagroup,true);
         }
 
         public void ShowWrongAnswers(UserScore score)
         {
+            Console.WriteLine("*****************WrongAnswers**************");
             foreach (string value in score.WrongAnswers)
             {
-                Console.WriteLine(value+"\n");
+                Console.WriteLine(value);
             }
+            Console.WriteLine("*******************************************");
         }
 
-        public List<string> readFile(DataGroup dataGroup)
+        public List<string> readFile(DataGroup dataGroup, bool show)
         {
             List<string> highscorelist = new List<string>();
             string file = "../../highscore.txt";
@@ -44,7 +47,7 @@ namespace Quiz
                 {
                     if (value != "")
                     {
-                        Console.WriteLine(i + " - " + value.Split(',')[0] + " - " + value.Split(',')[1]);
+                        if (show) Console.WriteLine(i + " - " + value.Split(',')[0] + " - " + value.Split(',')[1]);
                         highscorelist.Add(value);
                         i++;
                     }
