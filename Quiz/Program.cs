@@ -41,7 +41,6 @@ namespace Quiz
 
         public DataGroup FileReadingAndListReturn(DataGroup dataGroup)
         {
-            //Fix for spaden der �del�gger
             string[] fileArray = File.ReadAllLines("../../questions.txt");
             for (int i = 0; i < fileArray.Length; i+=1)
             {
@@ -146,6 +145,6 @@ public class DataGroup
 {
     public List<string> questions = new List<string>();
     public List<string> guesses = new List<string>();
-    public int newScore=0;
+    public int newScore = 0;
 
 }
