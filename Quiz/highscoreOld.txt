@@ -1,0 +1,10 @@
+ole,5
+bent,8
+søren,10
+keneth,1
+ib,6
+søs,9
+kristian,11
+henrik,6
+pia,3
+olga,7
