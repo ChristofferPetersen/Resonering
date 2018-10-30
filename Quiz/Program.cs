@@ -20,8 +20,16 @@ namespace Quiz
             // call calculate score method
             datagroup = game.FileReadingAndListReturn(datagroup);
 
+            DataGroup test = new DataGroup();
+            test.questions = new List<string> { "test", "hej"};
+
+            //Kalder brugerInput.
+            Methods brugerInput = new Methods();
+            var input = brugerInput.BrugerInput(test);
+
             //newScore = newScore.CalculateScore(newScore, datagroup);
       
+                     
             datagroup = highScore.HighScoreModule(datagroup);
         }
     }
@@ -44,45 +52,40 @@ namespace Quiz
             return dataGroup;
         }
 
-        public bool BrugerInput()
+        public DataGroup BrugerInput(DataGroup dataGroup)
         {
-            //Tager imod bruger input, dette er et trimmet input.
-            string brugerInput = UdvidetTrim(Console.ReadLine());
+            //Loop der køre gennem alle spørgsmål.
+            for (int i = 0; i < dataGroup.questions.Count; i++)
+            {
+                Console.WriteLine(dataGroup.questions[i]);
 
-            //Lav nyt objekt kaldet datagroup, for at få adgang til listen quesses
-            DataGroup dataGroup = new DataGroup();
+                //Tager imod bruger input, dette er et trimmet input.
+                string brugerInput = UdvidetTrim(Console.ReadLine());
 
-            //If saetning der tjekker om svaret er sandt eller falsk.
-            if (brugerInput == "Yes")
-            {   
-                //Besked ved svar 'Yes'.
-                Console.WriteLine("You answered Yes.");
+                //If saetning der tjekker om svaret er sandt eller falsk.
+                if (brugerInput.ToLower() == "yes")
+                {
+                    //Besked ved svar 'Yes'.
+                    Console.WriteLine("You answered Yes.");
 
-                //Add Yes to the List called quesses which is located inside Datagroup class.
-                dataGroup.guesses.Add("Yes");
+                    //Add Yes to the List called quesses which is located inside Datagroup class.
+                    dataGroup.guesses.Add("Yes");
+                }
+                else if (brugerInput.ToLower() == "no")
+                {
+                    //Besked ved svar 'No'.
+                    Console.WriteLine("You answered No.");
 
-                //Returnere en true status på svaret, indikere at svaret er 'Yes'.
-                return true;
-            }
-            else if (brugerInput == "No")
-            {   
-                //Besked ved svar 'No'.
-                Console.WriteLine("You answered No.");
-
-                //Add No to the List called quesses which is located inside Datagroup class.
-                dataGroup.guesses.Add("No");
-
-                //Returnere en false status på svaret, indikere at svaret er 'No'.
-                return false;
-            }
-            else
-            {   
-                //Besked ved forkert input.
-                Console.WriteLine("Write the answer as: 'Yes' / 'No'.");
-
-                //Den returnere en false ellers brokker metoden sig over at den ikke returnere noget data.
-                return false;
-            }
+                    //Add No to the List called quesses which is located inside Datagroup class.
+                    dataGroup.guesses.Add("No");
+                }
+                else
+                {
+                    //Besked ved forkert input.
+                    Console.WriteLine("Write the answer as: 'Yes' / 'No'.");
+                }
+            }            
+            return dataGroup;
             
         }
 
