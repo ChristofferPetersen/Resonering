@@ -30,9 +30,14 @@ namespace Quiz
 
         }
 
-        public void FileReadingAndListReturn()
+        public DataGroup FileReadingAndListReturn(DataGroup dataGroup)
         {
-            string path; //Stien til sp�rgsm�l og svar filen
+            string[] fileArray = File.ReadAllLines("questions.txt");
+            for (int i = 0; i < fileArray.Length; i+=1)
+            {
+                dataGroup.questions[i] = fileArray[i];
+            }
+            return dataGroup;
         }
 
         public void BrugerInput()
