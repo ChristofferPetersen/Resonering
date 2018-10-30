@@ -5,3 +5,10 @@ C:\Users\IKFa.skp\Documents\git\Resonering\Quiz\obj\Debug\Quiz.csprojAssemblyRef
 C:\Users\IKFa.skp\Documents\git\Resonering\Quiz\obj\Debug\Quiz.csproj.CoreCompileInputs.cache
 C:\Users\IKFa.skp\Documents\git\Resonering\Quiz\obj\Debug\Quiz.exe
 C:\Users\IKFa.skp\Documents\git\Resonering\Quiz\obj\Debug\Quiz.pdb
+C:\Users\Bruger\Desktop\Resonering\Quiz\bin\Debug\Quiz.exe.config
+C:\Users\Bruger\Desktop\Resonering\Quiz\bin\Debug\Quiz.exe
+C:\Users\Bruger\Desktop\Resonering\Quiz\bin\Debug\Quiz.pdb
+C:\Users\Bruger\Desktop\Resonering\Quiz\obj\Debug\Quiz.csprojAssemblyReference.cache
+C:\Users\Bruger\Desktop\Resonering\Quiz\obj\Debug\Quiz.csproj.CoreCompileInputs.cache
+C:\Users\Bruger\Desktop\Resonering\Quiz\obj\Debug\Quiz.exe
+C:\Users\Bruger\Desktop\Resonering\Quiz\obj\Debug\Quiz.pdb
