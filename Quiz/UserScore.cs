@@ -24,7 +24,7 @@ namespace Quiz
                 // question = splitData[0]
                 // correct answer = splitData[1]
                 // user answer = data.guesses[i]
-                if (splitData[1] == data.guesses[i]) score.CorrectAnswers++;
+                if (splitData[1].Trim() == data.guesses[i]) score.CorrectAnswers++;
                 else score.WrongAnswers.Add(question);
                 i++;
             }

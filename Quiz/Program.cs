@@ -24,7 +24,7 @@ namespace Quiz
             Methods brugerInput = new Methods();
             var input = brugerInput.BrugerInput(datagroup);
 
-            newScore = newScore.CalculateScore(newScore, datagroup);
+            newScore = newScore.CalculateScore(newScore, input);
             
             highScore.HighScoreModule(datagroup,newScore);
         }
