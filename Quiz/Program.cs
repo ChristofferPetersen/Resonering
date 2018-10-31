@@ -27,6 +27,7 @@ namespace Quiz
             newScore = newScore.CalculateScore(newScore, input);
             
             highScore.HighScoreModule(datagroup,newScore);
+            Console.ReadKey();
         }
     }
 

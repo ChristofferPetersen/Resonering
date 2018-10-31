@@ -21,7 +21,10 @@ namespace Quiz
             writeFile(highscorelist);
             if (score.WrongAnswers.Count() > 0)
                 ShowWrongAnswers(score);
+
+                Console.WriteLine("*****************Leaderboard**************" + "\n");
             highscorelist = readFile(datagroup,true);
+               Console.WriteLine("\n" + "*******************************************");
         }
 
         public void ShowWrongAnswers(UserScore score)
@@ -43,7 +46,6 @@ namespace Quiz
             {
                 string fileContent = File.ReadAllText(file).Replace("\r", "");
                 string[] lines = fileContent.Split('\n');
-                Console.WriteLine("*****************Leaderboard**************" + "\n");
                 foreach (string value in lines)
                 {
                     if (value != "")
@@ -56,7 +58,6 @@ namespace Quiz
                         i++;
                     }
                 }
-                Console.WriteLine("\n" + "*******************************************");
             }
             else
                 File.OpenWrite(file);
