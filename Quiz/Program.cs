@@ -71,7 +71,7 @@ namespace Quiz
                     string brugerInput = UdvidetTrim(Console.ReadLine());
 
                     //If saetning der tjekker om svaret er sandt eller falsk.
-                    if (brugerInput.ToLower() == "yes")
+                    if (brugerInput.ToLower() == "yes" || brugerInput.ToLower() == "y")
                     {
                         //Besked ved svar 'Yes'.
                         Console.WriteLine("You answered Yes.");
@@ -80,7 +80,7 @@ namespace Quiz
                         dataGroup.guesses.Add("Yes");
                         quizRunning = false;
                     }
-                    else if (brugerInput.ToLower() == "no")
+                    else if (brugerInput.ToLower() == "no" || brugerInput.ToLower() == "n")
                     {
                         //Besked ved svar 'No'.
                         Console.WriteLine("You answered No.");
