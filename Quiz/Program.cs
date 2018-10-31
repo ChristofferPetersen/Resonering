@@ -32,11 +32,6 @@ namespace Quiz
 
     class Methods
     {
-        public void test()
-        {
-
-        }
-
         public DataGroup FileReadingAndListReturn(DataGroup dataGroup)
         {
             string[] fileArray = File.ReadAllLines("../../questions.txt");
@@ -107,17 +102,6 @@ namespace Quiz
         {
 
         }
-        /*
-        public DataGroup DisplayHighscores(DataGroup datagroup)
-        {
-            //datagroup.questions[0] = "kage,j";
-            //datagroup.quesses[0] = "j";
-            //File.ReadAllLines("highscore.txt");
-            Console.WriteLine("hej");
-
-            return datagroup;
-        }
-        */
         public string UdvidetTrim(string brugerInput)
         { //Funktion der fjerner overfloedige mellemrum fra input.
             //Variabler der styre hvilket stadie input er i.
