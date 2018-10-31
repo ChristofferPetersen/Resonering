@@ -32,11 +32,6 @@ namespace Quiz
 
     class Methods
     {
-        public void test()
-        {
-
-        }
-
         public DataGroup FileReadingAndListReturn(DataGroup dataGroup)
         {
             string[] fileArray = File.ReadAllLines("../../questions.txt");
@@ -64,17 +59,33 @@ namespace Quiz
 
                 while (quizRunning)
                 {
+                    //Linie der indikere at vi har fået et Spørgsmål
+                    Console.WriteLine("**********QUESTION**********" + "\n");
+
                     //Stiller et spørgsmål.
                     Console.WriteLine(questions[0]);
-                    
+
+                    //Linie der slutter kassen
+                    Console.WriteLine("\n" + "****************************");
+
                     //Tager imod bruger input, dette er et trimmet input.
                     string brugerInput = UdvidetTrim(Console.ReadLine());
+                    Console.Clear();
+
+                    //Linie der viser spørgsmålet og brugerens svar.
+                    Console.WriteLine("*****QUESTION AND ANSWER*****" + "\n");
+
+                    //Skriver spørgsmålet igen efter ens brugerInput er fjernet. //Dette er kun for at gøre dette pænere.
+                    Console.WriteLine(questions[0]);
 
                     //If saetning der tjekker om svaret er sandt eller falsk.
                     if (brugerInput.ToLower() == "yes")
                     {
                         //Besked ved svar 'Yes'.
                         Console.WriteLine("You answered Yes.");
+
+                        //Linie der slutter kassen efter man har svaret yes.
+                        Console.WriteLine("\n" + "*****************************");
 
                         //Add Yes to the List called quesses which is located inside Datagroup class.
                         dataGroup.guesses.Add("Yes");
@@ -85,6 +96,9 @@ namespace Quiz
                         //Besked ved svar 'No'.
                         Console.WriteLine("You answered No.");
 
+                        //Linie der slutter kassen efter man har svaret no.
+                        Console.WriteLine("\n" + "*****************************");
+
                         //Add No to the List called quesses which is located inside Datagroup class.
                         dataGroup.guesses.Add("No");
                         quizRunning = false;
@@ -93,8 +107,12 @@ namespace Quiz
                     {
                         //Besked ved forkert input.
                         Console.WriteLine("Write the answer as: 'Yes' / 'No'.");
+
+                        //Linie der slutter kassen efter man har svaret et forkert input
+                        Console.WriteLine("\n" + "*****************************");
+
                         //Dette er for at slette tidligere spørgsmål og svar
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.Clear();
                     }
                 }

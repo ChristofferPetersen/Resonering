@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.IO;
 
 namespace Quiz
@@ -26,12 +26,12 @@ namespace Quiz
 
         public void ShowWrongAnswers(UserScore score)
         {
-            Console.WriteLine("*****************WrongAnswers**************");
+            Console.WriteLine("*****************WrongAnswers**************" + "\n");
             foreach (string value in score.WrongAnswers)
             {
                 Console.WriteLine(value);
             }
-            Console.WriteLine("*******************************************");
+            Console.WriteLine("\n" + "*******************************************" + "\n");
         }
 
         public List<string> readFile(DataGroup dataGroup, bool show)
@@ -43,15 +43,20 @@ namespace Quiz
             {
                 string fileContent = File.ReadAllText(file).Replace("\r", "");
                 string[] lines = fileContent.Split('\n');
+                Console.WriteLine("*****************Leaderboard**************" + "\n");
                 foreach (string value in lines)
                 {
                     if (value != "")
                     {
-                        if (show) Console.WriteLine(i + " - " + value.Split(',')[0] + " - " + value.Split(',')[1]);
+                        if (show)
+                        {
+                            Console.WriteLine(i + " - " + value.Split(',')[0] + " - " + value.Split(',')[1]);
+                        }
                         highscorelist.Add(value);
                         i++;
                     }
                 }
+                Console.WriteLine("\n" + "*******************************************");
             }
             else
                 File.OpenWrite(file);
@@ -75,8 +80,13 @@ namespace Quiz
                 }
                 else
                 {
+                    Console.Clear();
+                    Console.WriteLine("*****ENTER YOUR NAME*****" + "\n");
                     Console.WriteLine("Skriv dit navn");
                     string navn = Console.ReadLine();
+                    Console.WriteLine("\n" + "*************************");
+                    Thread.Sleep(1000);
+                    Console.Clear();
                     NyHighScoreList.Add(navn+","+score);
                     NyHighScoreList.Add(linje);
                     score = -1;
