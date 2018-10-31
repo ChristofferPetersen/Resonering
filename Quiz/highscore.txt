@@ -1,4 +1,5 @@
 Christoffer,16
+elena,12
 ole,11
 bent,10
 s�ren,10

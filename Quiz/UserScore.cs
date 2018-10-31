@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Quiz
 {
     /// <summary>
-    /// contains user score and method to update score throughout the game
+    /// contains user score and method to calculate score at the end of the game
     /// </summary>
     public class UserScore
     {
@@ -21,9 +21,6 @@ namespace Quiz
             foreach(var question in data.questions)
             {
                 var splitData = question.Split(',');
-                // question = splitData[0]
-                // correct answer = splitData[1]
-                // user answer = data.guesses[i]
                 if (splitData[1].Trim() == data.guesses[i]) score.CorrectAnswers++;
                 else score.WrongAnswers.Add(question);
                 i++;

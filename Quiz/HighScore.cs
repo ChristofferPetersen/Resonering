@@ -22,19 +22,19 @@ namespace Quiz
             if (score.WrongAnswers.Count() > 0)
                 ShowWrongAnswers(score);
 
-                Console.WriteLine("*****************Leaderboard**************" + "\n");
+                Console.WriteLine("*****************Leaderboard**************\n");
             highscorelist = readFile(datagroup,true);
-               Console.WriteLine("\n" + "*******************************************");
+               Console.WriteLine("\n*******************************************");
         }
 
         public void ShowWrongAnswers(UserScore score)
         {
-            Console.WriteLine("*****************WrongAnswers**************" + "\n");
+            Console.WriteLine("*****************WrongAnswers**************\n");
             foreach (string value in score.WrongAnswers)
             {
                 Console.WriteLine(value);
             }
-            Console.WriteLine("\n" + "*******************************************" + "\n");
+            Console.WriteLine("\n*******************************************\n");
         }
 
         public List<string> readFile(DataGroup dataGroup, bool show)
@@ -82,9 +82,9 @@ namespace Quiz
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine("*****ENTER YOUR NAME*****" + "\n");
+                    Console.WriteLine("*****ENTER YOUR NAME*****\n");
                     Console.WriteLine("Skriv dit navn");
-                    Console.WriteLine("\n" + "*************************");
+                    Console.WriteLine("\n*************************");
                     string navn = Console.ReadLine();
                     Thread.Sleep(1000);
                     Console.Clear();

@@ -19,3 +19,10 @@ C:\Users\Christoffer Petersen\Desktop\Git projekt\Quiz\Resonering\Quiz\obj\Debug
 C:\Users\Christoffer Petersen\Desktop\Git projekt\Quiz\Resonering\Quiz\obj\Debug\Quiz.csproj.CoreCompileInputs.cache
 C:\Users\Christoffer Petersen\Desktop\Git projekt\Quiz\Resonering\Quiz\obj\Debug\Quiz.exe
 C:\Users\Christoffer Petersen\Desktop\Git projekt\Quiz\Resonering\Quiz\obj\Debug\Quiz.pdb
+C:\school projects\git exercise\Resonering\Quiz\bin\Debug\Quiz.exe.config
+C:\school projects\git exercise\Resonering\Quiz\bin\Debug\Quiz.exe
+C:\school projects\git exercise\Resonering\Quiz\bin\Debug\Quiz.pdb
+C:\school projects\git exercise\Resonering\Quiz\obj\Debug\Quiz.csprojAssemblyReference.cache
+C:\school projects\git exercise\Resonering\Quiz\obj\Debug\Quiz.csproj.CoreCompileInputs.cache
+C:\school projects\git exercise\Resonering\Quiz\obj\Debug\Quiz.exe
+C:\school projects\git exercise\Resonering\Quiz\obj\Debug\Quiz.pdb

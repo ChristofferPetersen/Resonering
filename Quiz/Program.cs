@@ -16,15 +16,14 @@ namespace Quiz
             UserScore newScore = new UserScore();
             HighScore highScore = new HighScore();
             
-            // call calculate score method
             datagroup = game.FileReadingAndListReturn(datagroup);
             
 
             //Kalder brugerInput.
-            Methods brugerInput = new Methods();
-            var input = brugerInput.BrugerInput(datagroup);
+            datagroup = game.BrugerInput(datagroup);
 
-            newScore = newScore.CalculateScore(newScore, input);
+            //call calculate score method
+            newScore = newScore.CalculateScore(newScore, datagroup);
             
             highScore.HighScoreModule(datagroup,newScore);
             Console.ReadKey();
@@ -61,20 +60,20 @@ namespace Quiz
                 while (quizRunning)
                 {
                     //Linie der indikere at vi har fået et Spørgsmål
-                    Console.WriteLine("**********QUESTION**********" + "\n");
+                    Console.WriteLine("**********QUESTION**********\n");
 
                     //Stiller et spørgsmål.
                     Console.WriteLine(questions[0]);
 
                     //Linie der slutter kassen
-                    Console.WriteLine("\n" + "****************************");
+                    Console.WriteLine("\n****************************");
 
                     //Tager imod bruger input, dette er et trimmet input.
                     string brugerInput = UdvidetTrim(Console.ReadLine());
                     Console.Clear();
 
                     //Linie der viser spørgsmålet og brugerens svar.
-                    Console.WriteLine("*****QUESTION AND ANSWER*****" + "\n");
+                    Console.WriteLine("*****QUESTION AND ANSWER*****\n");
 
                     //Skriver spørgsmålet igen efter ens brugerInput er fjernet. //Dette er kun for at gøre dette pænere.
                     Console.WriteLine(questions[0]);
@@ -86,7 +85,7 @@ namespace Quiz
                         Console.WriteLine("You answered Yes.");
 
                         //Linie der slutter kassen efter man har svaret yes.
-                        Console.WriteLine("\n" + "*****************************");
+                        Console.WriteLine("\n*****************************");
 
                         //Add Yes to the List called quesses which is located inside Datagroup class.
                         dataGroup.guesses.Add("Yes");
@@ -98,7 +97,7 @@ namespace Quiz
                         Console.WriteLine("You answered No.");
 
                         //Linie der slutter kassen efter man har svaret no.
-                        Console.WriteLine("\n" + "*****************************");
+                        Console.WriteLine("\n*****************************");
 
                         //Add No to the List called quesses which is located inside Datagroup class.
                         dataGroup.guesses.Add("No");
@@ -110,7 +109,7 @@ namespace Quiz
                         Console.WriteLine("Write the answer as: 'Yes' / 'No'.");
 
                         //Linie der slutter kassen efter man har svaret et forkert input
-                        Console.WriteLine("\n" + "*****************************");
+                        Console.WriteLine("\n*****************************");
 
                         //Dette er for at slette tidligere spørgsmål og svar
                         Thread.Sleep(2000);
