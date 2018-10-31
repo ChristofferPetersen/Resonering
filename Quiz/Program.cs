@@ -79,7 +79,7 @@ namespace Quiz
                     Console.WriteLine(questions[0]);
 
                     //If saetning der tjekker om svaret er sandt eller falsk.
-                    if (brugerInput.ToLower() == "yes")
+                    if (brugerInput.ToLower() == "yes" || brugerInput.ToLower() == "y")
                     {
                         //Besked ved svar 'Yes'.
                         Console.WriteLine("You answered Yes.");
@@ -91,7 +91,7 @@ namespace Quiz
                         dataGroup.guesses.Add("Yes");
                         quizRunning = false;
                     }
-                    else if (brugerInput.ToLower() == "no")
+                    else if (brugerInput.ToLower() == "no" || brugerInput.ToLower() == "n")
                     {
                         //Besked ved svar 'No'.
                         Console.WriteLine("You answered No.");
@@ -125,17 +125,6 @@ namespace Quiz
         {
 
         }
-        /*
-        public DataGroup DisplayHighscores(DataGroup datagroup)
-        {
-            //datagroup.questions[0] = "kage,j";
-            //datagroup.quesses[0] = "j";
-            //File.ReadAllLines("highscore.txt");
-            Console.WriteLine("hej");
-
-            return datagroup;
-        }
-        */
         public string UdvidetTrim(string brugerInput)
         { //Funktion der fjerner overfloedige mellemrum fra input.
             //Variabler der styre hvilket stadie input er i.
