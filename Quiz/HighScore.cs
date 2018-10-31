@@ -84,8 +84,8 @@ namespace Quiz
                     Console.Clear();
                     Console.WriteLine("*****ENTER YOUR NAME*****" + "\n");
                     Console.WriteLine("Skriv dit navn");
-                    string navn = Console.ReadLine();
                     Console.WriteLine("\n" + "*************************");
+                    string navn = Console.ReadLine();
                     Thread.Sleep(1000);
                     Console.Clear();
                     NyHighScoreList.Add(navn+","+score);
